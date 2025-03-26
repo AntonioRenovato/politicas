@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Politicas</title>
+</head>
+<body>
+    <div class="container mt-3">
+        <ul><img src="./source/Imagen3.svg" alt=""></ul>
+
+        <h1>Menu</h1>
+        <br>
+
+        <!-- Barra de búsqueda -->
+        <input type="text" id="searchBar" class="form-control mb-3" placeholder="Buscar..." onkeyup="searchFunction()">
+
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        Proveedores Internos
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        <div class="menu">
+                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                <div class="accordion-item search-item">
+                                    <h2 class="accordion-header" id="flush-headingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne">
+                                            <li>Sistemas</li>
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseOne" class="accordion-collapse collapse">
+                                        <div class="accordion-body">
+                                            <ul type="circle">
+                                                <li class="search-item"><a href="#">Políticas de equipo de cómputo</a></li>
+                                                <li class="search-item"><a href="#">Políticas de préstamo de equipo</a></li>
+                                                <li class="search-item"><a href="#">Políticas de solicitud de equipo</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item search-item">
+                                    <h2 class="accordion-header" id="flush-headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo">
+                                            <li>Administración</li>
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseTwo" class="accordion-collapse collapse">
+                                        <div class="accordion-body"><ul type="circle"><li class="search-item">Contenido en construcción</li></ul></div>
+                                    </div>
+                                </div>
+
+                                <!-- Puedes agregar más acordeones aquí -->
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item search-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                        Unidades de Negocio
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Contenido en construcción
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function searchFunction() {
+            let input = document.getElementById("searchBar").value.toLowerCase();
+            let items = document.querySelectorAll(".search-item");
+
+            items.forEach(item => {
+                let text = item.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
