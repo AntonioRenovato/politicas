@@ -15,7 +15,18 @@ h1{
     text-align: center;
 }
 img{
-    height: 5%;
-    width: 5%;
+    height: 10%;
+    width: 10%;
 }
 
+@media (max-width: 768px) { /* Para pantallas menores o iguales a 768px */
+    img {
+        width: 15%;
+    }
+}
+
+@media (max-width: 480px) { /* Para pantallas menores o iguales a 480px */
+    img {
+        width: 20%;
+    }
+}
